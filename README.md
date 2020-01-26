@@ -27,6 +27,7 @@ Here's the URI Design
 | api/gigs?page=1&pageSize=4| First Page with 4 Items***| Error **	| Error **     | Error **	  |
 
 ** Error Status Code (405 Method Not Allowed)
+
 *** The result will be sorted (OrderByDescending) by gig's date before its paged it.
 	That's because page 2 of a list of items sorted by ID is much different than page 2 of a list of items sorted by Date.
 	For pagination, both page and pagesize in the query string need to be greater than zero.
