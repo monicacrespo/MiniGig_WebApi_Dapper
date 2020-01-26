@@ -20,10 +20,11 @@ The code illustrates the following topics:
 
 Here's the URI Design
 
-| Resource  				        | GET (read)				        | POST (insert)		  | PUT (update)	    | DELETE (delete)				        ||
-| api/gigs 					        | Get List					        | New Item			    | Status Code Only**| Status Code Only**			      ||
-| api/gigs/2  			        | Get Item					        | Status Code Only**| Updated Item	    | Delete Item, Status Code (200)||
-| api/gigs?page=1&pageSize=4| First Page with 4 Items***| Status Code Only**| Status Code Only**| Status Code Only**			      ||
+| Resource		    | GET (read)    		| POST (insert) | PUT (update) | DELETE (delete)  |
+| ------------------------- | ------------------------- | ------------- | -------------| ---------------  |
+| api/gigs 	            | Get List	    		| New Item	| Error **     | Error **	  |
+| api/gigs/2                | Get Item      		| Error **	| Updated Item | Delete Item (200)|
+| api/gigs?page=1&pageSize=4| First Page with 4 Items***| Error **	| Error **     | Error **	  |
 
 ** Error Status Code (405 Method Not Allowed)
 *** The result will be sorted (OrderByDescending) by gig's date before its paged it.
