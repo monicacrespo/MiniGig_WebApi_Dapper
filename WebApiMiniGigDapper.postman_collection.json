@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "9bd417de-f75d-4d00-aa6a-620f9a47782f",
+		"name": "WebApiMiniGigDapper",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Update Async Gig",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"Id\": 2031,\r\n    \"Name\": \"Gig Updated v31\",\r\n    \"GigDate\": \"2020-01-15T00:00:00\",\r\n    \"MusicGenreId\": \"3\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:2002/Api/gigs/2031",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2002",
+					"path": [
+						"Api",
+						"gigs",
+						"2031"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Async Gig Bad Request",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"Id\": 15,\r\n    \"Name\": \"Gig Updated v2\",\r\n    \"GigDate\": \"2019-12-15T00:00:00\",\r\n    \"MusicGenreId\": \"3\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:2002/Api/gigs/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2002",
+					"path": [
+						"Api",
+						"gigs",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Async Gig",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:2002/Api/gigs/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2002",
+					"path": [
+						"Api",
+						"gigs",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Paging Async Gig Collection",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:2002/Api/gigs?page=1&pageSize=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2002",
+					"path": [
+						"Api",
+						"gigs"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "pageSize",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Async Gigs collection",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:2002/Api/gigs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2002",
+					"path": [
+						"Api",
+						"gigs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Async Gig",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"Name\": \"Test Post 65\",\n    \"GigDate\": \"2020-01-20T00:00:00\",\n    \"MusicGenreId\": \"1\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:2002/api/gigs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2002",
+					"path": [
+						"api",
+						"gigs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Async Gig",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:2002/Api/gigs/2033",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2002",
+					"path": [
+						"Api",
+						"gigs",
+						"2033"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
