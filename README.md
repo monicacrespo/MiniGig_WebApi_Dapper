@@ -32,3 +32,12 @@ Here's the URI Design
 	That's because page 2 of a list of items sorted by ID is much different than page 2 of a list of items sorted by Date.
 	For pagination, both page and pagesize in the query string need to be greater than zero.
 	http://.../api/gigs?page=0&pageSize=4 will return the same result as http://.../api/gigs, the list sorted (OrderBy) by ID.
+
+How to test your Create Gig Request With Postman
+
+![PostmanGetGig](https://github.com/monicacrespo/MiniGig_WebApi_Dapper/blob/master/MiniGigWebApi/Images/PostmanCreateGig.JPG)
+
+
+GET Gig Request 
+![PostmanGetGig](https://github.com/monicacrespo/MiniGig_WebApi_Dapper/blob/master/MiniGigWebApi/Images/PostmanGetGig.JPG)
+
