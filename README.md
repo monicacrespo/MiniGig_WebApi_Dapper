@@ -38,6 +38,46 @@ How to test your Create Gig Request With Postman
 ![PostmanGetGig](https://github.com/monicacrespo/MiniGig_WebApi_Dapper/blob/master/MiniGigWebApi/Images/PostmanCreateGig.JPG)
 
 
-GET Gig Request 
+
+Get Gig Request just created
+
 ![PostmanGetGig](https://github.com/monicacrespo/MiniGig_WebApi_Dapper/blob/master/MiniGigWebApi/Images/PostmanGetGig.JPG)
+
+
+Update Gig Request 
+
+![PostmanGetGig](https://github.com/monicacrespo/MiniGig_WebApi_Dapper/blob/master/MiniGigWebApi/Images/PostmanUpdateGig.JPG)
+
+
+Get Gig Request just updated
+
+![PostmanGetGig](https://github.com/monicacrespo/MiniGig_WebApi_Dapper/blob/master/MiniGigWebApi/Images/PostmanGetGigUpdated.JPG)
+
+
+Delete Gig Request
+
+![PostmanGetGig](https://github.com/monicacrespo/MiniGig_WebApi_Dapper/blob/master/MiniGigWebApi/Images/PostmanDeleteGig.JPG)
+
+
+Get Gig Not Found 
+
+![PostmanGetGig](https://github.com/monicacrespo/MiniGig_WebApi_Dapper/blob/master/MiniGigWebApi/Images/PostmanGetGigNotFound.JPG)
+
+
+Get Paged Gigs
+
+![PostmanGetGig](https://github.com/monicacrespo/MiniGig_WebApi_Dapper/blob/master/MiniGigWebApi/Images/PostmanGetPagedGigs.JPG)
+
+
+Update Gig with Identifier different in URL and Body of Request
+
+![PostmanGetGig](https://github.com/monicacrespo/MiniGig_WebApi_Dapper/blob/master/MiniGigWebApi/Images/PostmanUpdateGigBadRequest.JPG)
+
+
+
+
+
+
+
+
 
