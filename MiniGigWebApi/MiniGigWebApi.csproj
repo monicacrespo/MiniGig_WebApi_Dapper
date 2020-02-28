@@ -113,6 +113,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\1.Database.sql" />
+    <Content Include="App_Data\2.Users.sql" />
     <Content Include="Global.asax" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -138,9 +140,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\MiniGigWebApi.Data.Dapper\MiniGigWebApi.Data.Dapper.csproj">
       <Project>{065E0E41-8B99-46CE-A4C5-9B78DF5C4EDE}</Project>
