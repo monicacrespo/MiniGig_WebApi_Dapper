@@ -11,11 +11,11 @@ namespace MiniGigWebApi.Controllers
     [RoutePrefix("api/gigs")]
     public class GigsController : ApiController
     {
-        private readonly IAsyncGigRepository gigRepository;
+        private readonly IAsyncGigRepository<AsyncGigRepository> gigRepository;
 
         private readonly IMapper mapper;
 
-        public GigsController(IAsyncGigRepository gigRepository, IMapper mapper)
+        public GigsController(IAsyncGigRepository<AsyncGigRepository> gigRepository, IMapper mapper)
         {
             this.gigRepository = gigRepository;
             this.mapper = mapper;

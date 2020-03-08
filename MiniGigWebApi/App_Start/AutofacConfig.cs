@@ -42,7 +42,7 @@ namespace MiniGigWebApi
 
             //Repositories
             bldr.RegisterType<AsyncGigRepository>()
-                .As<IAsyncGigRepository>()
+                .As<IAsyncGigRepository<AsyncGigRepository>>()
                 .InstancePerLifetimeScope();
         }
     }

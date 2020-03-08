@@ -4,7 +4,7 @@ namespace MiniGigWebApi.Data.Dapper
     using System.Threading.Tasks;
     using MiniGigWebApi.Domain;
  
-    public interface IAsyncGigRepository
+    public interface IAsyncGigRepository<T> where T : class
     {
         Task<Gig> FindGigDetails(int id);
 

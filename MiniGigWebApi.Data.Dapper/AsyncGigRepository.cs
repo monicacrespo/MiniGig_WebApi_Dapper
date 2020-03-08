@@ -7,7 +7,7 @@ namespace MiniGigWebApi.Data.Dapper
     using global::Dapper;
     using MiniGigWebApi.Domain;
 
-    public class AsyncGigRepository : IAsyncGigRepository
+    public class AsyncGigRepository : IAsyncGigRepository<AsyncGigRepository>
     {
         private readonly IDbConnection connection;
 
