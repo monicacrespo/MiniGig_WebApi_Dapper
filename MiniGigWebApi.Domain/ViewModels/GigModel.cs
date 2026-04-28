@@ -20,7 +20,8 @@ namespace MiniGigWebApi.Domain
     /// But for data that really is part of this individual model, creating the model that represents the entire object, 
     /// including things that may be stored in the database as separate objects, means you have more control over what your users actually work with.   
     ///  CreateMap<Gig, GigModel>()
-    ///     .ForMember(c => c.Category, opt => opt.MapFrom(m => m.MusicGenre.Category))
+    ///     .ForMember(c => c.Category, opt => opt.MapFrom(m => m.MusicGenre.Category
+    ///     .ReverseMap(); 
     /// </summary>
     public class GigModel
     {        

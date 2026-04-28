@@ -1,10 +1,9 @@
 namespace MiniGigWebApi.Controllers
 {
     using System;
-    using System.Collections.Generic;
+    using System.Linq;
     using System.Threading.Tasks;
     using System.Web.Http;
-    using AutoMapper;
     using MiniGigWebApi.Data.Dapper;
     using MiniGigWebApi.Domain;
 
@@ -13,12 +12,9 @@ namespace MiniGigWebApi.Controllers
     {
         private readonly IAsyncGigRepository<AsyncGigRepository> gigRepository;
 
-        private readonly IMapper mapper;
-
-        public GigsController(IAsyncGigRepository<AsyncGigRepository> gigRepository, IMapper mapper)
+        public GigsController(IAsyncGigRepository<AsyncGigRepository> gigRepository)
         {
             this.gigRepository = gigRepository;
-            this.mapper = mapper;
         }
 
         [Route]
@@ -27,7 +23,7 @@ namespace MiniGigWebApi.Controllers
             try
             {
                 var result = await this.gigRepository.GetAllGigsWithGenre(page, pageSize);
-                var mappedResult = this.mapper.Map<IEnumerable<GigModel>>(result);
+                var mappedResult = result?.Select(GigMapper.ToModel);
 
                 return this.Ok(mappedResult);
             }
@@ -50,7 +46,7 @@ namespace MiniGigWebApi.Controllers
                     return this.NotFound();
                 }
 
-                return this.Ok(this.mapper.Map<GigModel>(result));
+                return this.Ok(GigMapper.ToModel(result));
             }
             catch (Exception ex)
             {
@@ -71,11 +67,11 @@ namespace MiniGigWebApi.Controllers
 
                 if (ModelState.IsValid)
                 {
-                    var gig = this.mapper.Map<Gig>(model);
+                    var gig = GigMapper.ToEntity(model);
 
                     if (await this.gigRepository.Insert(gig))
                     {
-                        var newModel = this.mapper.Map<GigModel>(gig);
+                        var newModel = GigMapper.ToModel(gig);
                         return this.CreatedAtRoute("GetGig", new { id = newModel.Id }, newModel);
                     }
                 }
@@ -104,11 +100,11 @@ namespace MiniGigWebApi.Controllers
                     return this.BadRequest();
                 }
 
-                this.mapper.Map(model, gig);
+                GigMapper.UpdateEntity(model, gig);
 
                 if (await this.gigRepository.Update(gig))
                 {
-                    return this.Ok(this.mapper.Map<GigModel>(gig));
+                    return this.Ok(GigMapper.ToModel(gig));
                 }
                 else
                 {

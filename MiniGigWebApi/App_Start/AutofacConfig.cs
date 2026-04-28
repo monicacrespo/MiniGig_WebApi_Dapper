@@ -7,9 +7,7 @@ namespace MiniGigWebApi
     using System.Web.Http;
     using Autofac;
     using Autofac.Integration.WebApi;
-    using AutoMapper;
     using MiniGigWebApi.Data.Dapper;
-    using MiniGigWebApi.Domain;
 
     public class AutofacConfig
     {
@@ -27,15 +25,6 @@ namespace MiniGigWebApi
 
         private static void RegisterServices(ContainerBuilder bldr)
         {
-            var config = new MapperConfiguration(cfg =>
-            {
-                cfg.AddProfile(new GigMappingProfile());
-            });
-
-            bldr.RegisterInstance(config.CreateMapper())
-              .As<IMapper>()
-              .SingleInstance();
-
             //Database connection
             var connectionString = ConfigurationManager.ConnectionStrings["MiniGigConnection"].ConnectionString;
             bldr.Register(ctx => new SqlConnection(connectionString)).As<IDbConnection>().InstancePerLifetimeScope();
